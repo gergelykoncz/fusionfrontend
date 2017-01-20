@@ -1,0 +1,29 @@
+﻿<h2>Patient #{{patientId}}</h2>
+<form *ngIf="patient">
+    <div class="form-control">
+        <label for="birthDate">Birth Date</label>
+        <input type="datetime" id="birthDate" name="birthDate" [(ngModel)]="patient.BirthDate" />
+    </div>
+    <div class="form-control">
+        <label for="ssn">Social Security Number</label>
+        <input type="text" id="ssn" name="ssn" [(ngModel)]="patient.SSN" required />
+    </div>
+
+    <button (click)="savePatient(patient)" class="btn btn-default">Save</button>
+
+</form>
+
+<table *ngIf="patient && patient.PatientNames" class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let name of patient.PatientNames">
+            <td>{{name.FName}}</td>
+            <td>{{name.LName}}</td>
+        </tr>
+    </tbody>
+</table>

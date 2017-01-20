@@ -1,0 +1,26 @@
+﻿<h2>Patient List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date of Birth</th>
+            <th>Center Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let patient of patients">
+            <td>
+                <a routerLink="{{patient.PatientId}}">
+                    {{patient.PatientId}}
+                </a>
+            </td>
+            <td>
+                {{formatDate(patient.BirthDate)}}
+            </td>
+            <td>
+                {{patient.CenterCode}}
+            </td>
+        </tr>
+    </tbody>
+</table>

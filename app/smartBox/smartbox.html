@@ -1,0 +1,5 @@
+﻿<div class="smart-box">
+    <input type="text" (blur)="validateMe(scannedValue)" 
+           [(ngModel)]="scannedValue" />
+    <span class="error">{{errorMessage}}</span>
+</div>

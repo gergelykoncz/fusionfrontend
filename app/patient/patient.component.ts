@@ -13,7 +13,7 @@ export class PatientComponent {
     constructor(currentRoute: ActivatedRoute,
         httpService: Service) {
 
-        currentRoute.params.subscribe(params => {
+        currentRoute.params.subscribe((params :any)=> {
             this.patientId = parseInt(params.id);
 
             httpService.getById(this.patientId).subscribe((patient) => {
